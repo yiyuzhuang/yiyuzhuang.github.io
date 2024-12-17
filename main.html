@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <meta name="description" content="IDOL: Instant Photorealistic 3D Human Creation from a Single Image" />
+    <title>IDOL: Instant Photorealistic 3D Human Creation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-3/fE7cWuNZ0xej+v0yic3EHXPTpJov3xLn3nFfYFzZR15dj0n4gm/faa2YZvwsGInTcn9Itv/1TZue+IkHD0JQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+        header, main, footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .icon-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .icon-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.9em;
+            font-weight: 500;
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .icon-links a:nth-child(1) {
+            background: #4caf50; /* Green */
+        }
+        .icon-links a:nth-child(2) {
+            background: #2196f3; /* Blue */
+        }
+        .icon-links a:nth-child(3) {
+            background: #ff9800; /* Orange */
+        }
+        .icon-links a:nth-child(4) {
+            background: #9c27b0; /* Purple */
+        }
+        .icon-links a:nth-child(5) {
+            background: #f44336; /* Red */
+        }
+        .icon-links a:hover {
+            transform: translateY(-2px);
+            filter: brightness(0.9);
+        }
+        header .authors {
+            font-size: 0.95em;
+            color: #555;
+        }
+        .footnotes {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+        .hero-image {
+            position: relative;
+            margin-bottom: 40px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .hero-image img {
+            width: 100%;
+            display: block;
+        }
+        .figure-caption {
+            font-size: 0.9em;
+            margin-top: 10px;
+            color: #444;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .abstract {
+            background: #fff;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .abstract h2 {
+            margin-top: 0;
+            font-size: 1.4em;
+            font-weight: 500;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .abstract p {
+            font-size: 1em;
+            margin-bottom: 0;
+        }
+        .content-section {
+            margin-bottom: 40px;
+        }
+        .content-section h2 {
+            font-size: 1.4em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .video-box {
+            flex: 1 1 100%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+        .video-box h2 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        .video-box video {
+            width: 100%;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            padding: 40px 0;
+        }
+        .citation-section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-top: 60px;
+        }
+        .citation-section h2 {
+            margin-top: 0;
+            font-size: 1.4em;
+            font-weight: 500;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .citation-section pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            overflow: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        .introduction-container {
+            background: linear-gradient(to bottom right, #f0f0ff, #ffffff);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .introduction-text {
+            flex: 1 1 60%;
+        }
+        .introduction-text h2 {
+            font-size: 1.4em;
+            font-weight: 500;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .introduction-text p {
+            font-size: 1em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .introduction-video {
+            flex: 1 1 50%;
+        }
+        .introduction-video video {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .icon-links {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .introduction-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .introduction-text, .introduction-video {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>IDOL: Instant Photorealistic 3D Human Creation from a Single Image</h1>
+    <div class="icon-links">
+        <a href="paper.pdf" target="_blank">Paper</a>
+        <a href="https://github.com/your-repo" target="_blank">Code</a>
+        <a href="#dataset">Dataset</a>
+        <a href="https://your-live-demo-link.com" target="_blank">Live Demo</a>
+        <a href="#bibtex">BibTeX</a>
+    </div>
+    <div class="authors">
+        <p>Yiyu Zhuang<sup>1,4*</sup> · Jiaxi Lv<sup>2,4*</sup> · Hao Wen<sup>3,4*</sup> · Qing Shuai<sup>4</sup> · Ailing Zeng<sup>4†</sup> · Hao Zhu<sup>1†</sup></p>
+        <p>Shifeng Chen<sup>2,5</sup> · Yujiu Yang<sup>3</sup> · Xun Cao<sup>1</sup> · Wei Liu<sup>4</sup></p>
+        <p class="institutions"><small><sup>1</sup>Nanjing University, <sup>2</sup>Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences, <sup>3</sup>Tsinghua University, <sup>4</sup>Tencent, <sup>5</sup>Shenzhen University of Advanced Technology</small></p>
+    </div>
+    <div class="footnotes">
+        <p><sup>*</sup>Equal contributions | <sup>†</sup>Corresponding authors</p>
+        <p><small>Work done during the internship at Tencent by Yiyu Zhuang, Jiaxi Lv, and Hao Wen</small></p>
+    </div>
+</header>
+
+<main>
+    <!-- Demo Video -->
+    <div class="video-box">
+        <h2>Demo Video</h2>
+        <p>
+            Watch the demo video showcasing our method, IDOL, in action. See how it reconstructs photorealistic, animatable 3D humans from single images, handling diverse shapes, viewpoints, and occlusions seamlessly.
+        </p>
+        <video controls preload="metadata">
+            <source src="videos/demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Abstract -->
+    <section class="abstract">
+        <h2>Abstract</h2>
+        <p>
+            This work introduces IDOL, a feed-forward, single-image human reconstruction framework that is fast, high-fidelity, and generalizable. Leveraging a large-scale dataset of 100K multi-view subjects, our method demonstrates exceptional generalizability and robustness in handling diverse human shapes, cross-domain data, severe viewpoints, and occlusions. With a uniform structured representation, the reconstructed avatars are directly animatable and easily editable, providing a significant step forward for various applications in graphics, vision, and beyond.
+        </p>
+    
+
+        <!-- Teaser Figure -->
+        <div class="hero-image">
+            <img src="images/Teaser_v2.png" alt="Teaser Figure: IDOL Visualization">
+        </div>
+        <div class="figure-caption">
+            Our method (a) provides a fast and high-fidelity feed-forward single-image human reconstruction pipeline; (b) leverages a large-scale multi-view human dataset to handle diverse shapes, domains, viewpoints, and occlusions; (c) produces structured, animatable, and easily editable avatars.
+        </div>
+
+    </section>
+
+
+    <!-- Introduction Section -->
+    <div class="introduction-container">
+        <div class="introduction-text">
+            <h2>Introduction</h2>
+            <p>
+                Explore how IDOL redefines single-image 3D human reconstruction. This introductory video presents the method’s core ideas, providing a clear overview of how our framework achieves photorealistic reconstruction, seamless animation/editing, and robust performance across challenging scenarios.
+            </p>
+        </div>
+        <div class="introduction-video">
+            <video controls preload="metadata">
+                <source src="videos/introduction.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Pipeline -->
+    <section class="abstract">
+        <h2>Pipeline</h2>
+        <p>The architecture of IDOL, a fully differentiable transformer-based framework for reconstructing animatable 3D human from a single image. The model integrates a high-resolution encoder and fuses image tokens with learnable UV tokens through the UV-Alignment Transformer. A UV Decoder predicts Gaussian attribute maps as intermediate representations, capturing the human's geometry and appearance in a structured 2D UV space defined by the SMPL-X model. These maps, in conjunction with the SMPL-X model, represent a 3D human avatar in a canonical space, which can be animated using linear blend skinning (LBS). The model is optimized using multi-view images with diverse poses and identities, learning to disentangle pose, appearance, and shape.</p>
+        <img src="images/fig_pipeline.png" alt="Pipeline Figure" style="width:100%; border-radius:8px; margin-top:20px;">
+    </section>
+
+    <!-- Dataset Introduction -->
+    <section id="dataset" class="abstract">
+        <h2>Dataset</h2>
+        <p>
+            We introduce a large-scale multi-view human dataset containing over 100K photorealistic subjects for noncommercial research purposes. The dataset supports robust 3D reconstruction tasks and facilitates research advancements in human modeling.        </p>
+        <div class="dataset-video">
+            <video controls width="100%" poster="images/dataset_poster.png">
+                <source src="videos/dataset.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h3> Apply for Dataset Access </h3>
+        <p style="margin-top:15px;">
+            To access the dataset, please submit an application using the link below:
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVqrA9Mc_ODdcTZsB3GgrxgSNZk5deOzK4f64N72xlQFhvzQ/viewform?usp=dialog" target="_blank">
+                [Apply for Dataset Access]
+            </a>
+        </p>
+    </section>
+
+    <section id="dataset" class="abstract">
+        <h2>Animation Results</h2>
+        <p>
+            This section highlights the animation capabilities of IDOL. Given a reference image that provides the target character's identity and a reference video that supplies the pose and motion, our method animates the reconstructed character to match the movements observed in the video.
+
+            Using the structured 3D representation and SMPL-X pose parameters, IDOL achieves precise control over the avatar's pose, including detailed finger movements. The resulting animation maintains the character's identity from the reference image while replicating the motion from the video, producing realistic and dynamic results.
+        </p>
+        <div class="dataset-video">
+            <video controls width="100%" poster="images/dataset_poster.png">
+                <source src="videos/animation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="dataset-video">
+            <video controls width="100%" poster="images/dataset_poster.png">
+                <source src="videos/animation2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Citation Box -->
+    <section id="bibtex" class="citation-section">
+        <h2>Citation</h2>
+        <p>If you find our work useful, please cite it using the following format:</p>
+        <pre>
+@inproceedings{zhuang2024idol,
+  title={IDOL: Instant Photorealistic 3D Human Creation from a Single Image},
+  author={Zhuang, Yiyu and Lv, Jiaxi and Wen, Hao and Shuai, Qing and Zeng, Ailing and Zhu, Hao and Chen, Shifeng and Yang, Yujiu and Cao, Xun and Liu, Wei},
+  booktitle={CVPR},
+  year={2024}
+}
+        </pre>
+    </section>
+
+</main>
+
+<footer>
+    © 2024 IDOL Project | For inquiries, contact the corresponding authors.
+</footer>
+
+</body>
+</html>
