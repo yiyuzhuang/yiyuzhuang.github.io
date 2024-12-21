@@ -1,0 +1,501 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --background-color: #f8f9fa;
+    --accent-color: #3498db;
+    --text-color: #2c3e50;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 个人资料部分的样式优化 */
+.profile {
+    display: flex;
+    gap: 3rem;
+    margin: 3rem 0 4rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.profile-left {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-right {
+    flex: 1;
+    min-width: 0; /* 防止内容溢出 */
+}
+
+.profile-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: translateY(-5px);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(120deg, var(--primary-color), var(--accent-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile-info h2 {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin: 0.8rem 0;
+}
+
+/* 研究兴趣卡片样式优化 */
+.research-interests {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.interest-card {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+}
+
+.interest-card h4 {
+    font-size: 1.4em;
+    color: var(--accent-color);
+    margin: 0 0 1rem;
+}
+
+/* 论文展示部分样式优化 */
+.publication-item {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.publication-item:hover {
+    transform: translateY(-5px);
+}
+
+.publication-preview {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.preview-container {
+    width: 40%;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+video.publication-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+img.publication-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .preview-container {
+        width: 100%;
+        margin: 1rem auto;
+    }
+}
+
+.publication-title {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.publication-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.publication-links a {
+    padding: 0.6rem 1.2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 500;
+    transition: all 0.2s;
+    border: 2px solid var(--accent-color);
+}
+
+.publication-links a:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* 联系方式样式优化 */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.contact-item {
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.fun-facts {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.fun-facts li {
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    background: rgba(52, 152, 219, 0.08);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--accent-color);
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.fun-facts li:hover {
+    background: rgba(52, 152, 219, 0.12);
+    transform: translateX(5px);
+}
+
+.bio-text {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: var(--secondary-color);
+    margin: 1.5rem 0;
+    max-width: 800px;
+    white-space: normal;
+}
+
+.bio-text p {
+    margin: 0.8rem 0;
+    padding: 0;
+    word-spacing: 2px;
+    letter-spacing: 0.3px;
+}
+
+.bio-text p:first-child {
+    font-size: 1.4em;
+    margin-bottom: 1rem;
+}
+
+/* 实习经历样式 */
+.experience-list {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.experience-item {
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+}
+
+.experience-item h4 {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    margin: 0 0 0.5rem;
+}
+
+.experience-date {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+/* 更新论文样式 */
+.publication-title {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 1rem 0 0.5rem;
+}
+
+.authors {
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+    font-size: 1.1em;
+}
+
+.venue {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+/* 优化 fun-facts 样式 */
+.fun-facts li {
+    margin: 0.8rem 0;
+    padding: 0.8rem 1.2rem;
+    background: rgba(52, 152, 219, 0.08);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--accent-color);
+}
+
+.fun-facts li:hover {
+    transform: translateX(10px);
+    background: rgba(52, 152, 219, 0.12);
+}
+
+/* 添加获奖分样式 */
+.awards-list {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.award-item {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.award-item:hover {
+    transform: translateY(-5px);
+}
+
+.award-item h4 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin: 0 0 0.5rem;
+}
+
+.award-date {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* 论文注释样式 */
+.publication-note {
+    color: var(--secondary-color);
+    font-style: italic;
+    margin: 1rem 0;
+    font-size: 0.9em;
+}
+
+/* 新作品样式以支持特殊标记 */
+.authors {
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* 更新个人资料联系方式样式 */
+.profile-contact {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.profile-contact .contact-item {
+    padding: 0.8rem 1.2rem;
+    background: rgba(52, 152, 219, 0.08);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: fit-content;
+}
+
+.profile-contact .contact-item:hover {
+    background: rgba(52, 152, 219, 0.15);
+    transform: translateX(5px);
+}
+
+.profile-contact .icon {
+    color: var(--accent-color);
+}
+
+.profile-contact a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.2s;
+}
+
+.profile-contact a:hover {
+    color: var(--accent-color);
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .profile-contact {
+        flex-direction: column;
+    }
+    
+    .profile-contact .contact-item {
+        width: 100%;
+        justify-content: center;
+    }
+} 
+
+/* 添加作者名字高亮样式 */
+.author-highlight {
+    /* color: var(--accent-color); */
+    font-weight: 600;
+} 
+
+/* 访客地图样式 */
+.visitor-section {
+    background: white;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.visitor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.visitor-container h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5em;
+}
+
+.visitor-map {
+    width: 100%;
+    max-width: 800px;
+    margin: 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+/* 页脚样式 */
+footer {
+    background: white;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content p {
+    color: var(--secondary-color);
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .visitor-container {
+        padding: 0 1rem;
+    }
+    
+    .visitor-map {
+        padding: 0.5rem;
+    }
+} 
