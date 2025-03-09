@@ -227,9 +227,60 @@
             margin: 20px 0;
         }
 
+        @keyframes announceSlideIn {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes textColorChange {
+            0% { color: #ffffff; }
+            25% { color: #ffd700; }  /* 金色 */
+            50% { color: #87CEEB; }  /* 天蓝色 */
+            75% { color: #98FB98; }  /* 浅绿色 */
+            100% { color: #ffffff; }
+        }
+
+        .announcement {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.1em;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            animation: announceSlideIn 1s ease-out, pulse 2s infinite;
+        }
+
+        .announcement span {
+            animation: textColorChange 4s infinite;
+            text-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
     </style>
 </head>
 <body>
+
+<div class="announcement">
+    <span>🎉 We are excited to announce that our IDOL paper has been accepted to CVPR 2025! Join our IDOL community and explore its applications!</span>
+</div>
 
 <header>
     <h1>IDOL: Instant Photorealistic 3D Human Creation from a Single Image</h1>
@@ -290,7 +341,7 @@
         <div class="introduction-text">
             <h2>Introduction</h2>
             <p>
-                Explore how IDOL redefines single-image 3D human reconstruction. This introductory video presents the method’s core ideas, providing a clear overview of how our framework achieves photorealistic reconstruction, seamless animation/editing, and robust performance across challenging scenarios.
+                Explore how IDOL redefines single-image 3D human reconstruction. This introductory video presents the method's core ideas, providing a clear overview of how our framework achieves photorealistic reconstruction, seamless animation/editing, and robust performance across challenging scenarios.
             </p>
         </div>
         <div class="introduction-video">
@@ -357,12 +408,14 @@
         <h2>Citation</h2>
         <p>If you find our work useful, please cite it using the following format:</p>
         <pre>
-          @article{zhuang2024idolinstant,                
-            title={IDOL: Instant Photorealistic 3D Human Creation from a Single Image}, 
-            author={Yiyu Zhuang and Jiaxi Lv and Hao Wen and Qing Shuai and Ailing Zeng and Hao Zhu and Shifeng Chen and Yujiu Yang and Xun Cao and Wei Liu},
-            journal={arXiv preprint arXiv:2412.14963},
-            year={2024},
-            url={https://arxiv.org/abs/2412.14963}, 
+            @misc{zhuang2024idolinstantphotorealistic3d,
+                title={IDOL: Instant Photorealistic 3D Human Creation from a Single Image}, 
+                author={Yiyu Zhuang and Jiaxi Lv and Hao Wen and Qing Shuai and Ailing Zeng and Hao Zhu and Shifeng Chen and Yujiu Yang and Xun Cao and Wei Liu},
+                year={2024},
+                eprint={2412.14963},
+                archivePrefix={arXiv},
+                primaryClass={cs.CV},
+                url={https://arxiv.org/abs/2412.14963}, 
           }
         </pre>
     </section>
@@ -384,27 +437,11 @@
     <div style="font-size: 0.95em; color: #555; margin-top: 20px; text-align: left;">
         <strong>Contact Us:</strong>
         <ul style="list-style: none; padding: 0; margin-top: 10px; line-height: 1.6;">
-            <li>
-                <strong>
-                    <a href="https://yiyuzhuang.github.io/home/" target="_blank" style="color: #0073e6; text-decoration: none;">Yiyu Zhuang</a>
-                </strong>
-                (<a href="mailto:yiyu.zhuang@smail.nju.edu.cn" style="color: #0073e6; text-decoration: none;">yiyu.zhuang@smail.nju.edu.cn</a>)
-            </li>
-            <li>
-                <strong>
-                    <a href="https://ailingzeng.site/" target="_blank" style="color: #0073e6; text-decoration: none;">Ailing Zeng</a>
-                </strong>
-                (<a href="mailto:ailingzengzzz@gmail.com" style="color: #0073e6; text-decoration: none;">ailingzengzzz@gmail.com</a>)
-            </li>
-            <li>
-                <strong>
-                    <a href="http://zhuhao.cc/home/" target="_blank" style="color: #0073e6; text-decoration: none;">Hao Zhu</a>
-                </strong>
-                (<a href="mailto:zhuhaoese@nju.edu.cn" style="color: #0073e6; text-decoration: none;">zhuhaoese@nju.edu.cn</a>)
-            </li>
+            <li><strong>Yiyu Zhuang</strong> (<a href="mailto:yiyu.zhuang@smail.nju.edu.cn" style="color: #0073e6; text-decoration: none;">yiyu.zhuang@smail.nju.edu.cn</a>)</li>
+            <li><strong>Ailing Zeng</strong> (<a href="mailto:ailingzengzzz@gmail.com" style="color: #0073e6; text-decoration: none;">ailingzengzzz@gmail.com</a>)</li>
+            <li><strong>Hao Zhu</strong> (<a href="mailto:zhuhaoese@nju.edu.cn" style="color: #0073e6; text-decoration: none;">zhuhaoese@nju.edu.cn</a>)</li>
         </ul>
     </div>
-    
 </div>
 
 
