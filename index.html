@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-active-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f3ee">
+    <meta name="description" content="Yiyu Zhuang is an Assistant Researcher at Nanjing University working on human-centered spatial intelligence and embodied intelligence.">
+    <title>Yiyu Zhuang | About Me</title>
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var language = params.get("lang");
+            if (language !== "en" && language !== "zh") {
+                try { language = localStorage.getItem("site-language"); } catch (error) {}
+            }
+            if (language !== "en" && language !== "zh") {
+                language = navigator.language.toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+            }
+            document.documentElement.dataset.activeLang = language;
+            document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+        })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body
+    data-page="about"
+    data-title-en="Yiyu Zhuang | About Me"
+    data-title-zh="庄义昱 | 关于我"
+    data-description-en="Yiyu Zhuang is an Assistant Researcher at Nanjing University working on human-centered spatial intelligence and embodied intelligence."
+    data-description-zh="庄义昱，南京大学智能科学与技术学院特任助理研究员，研究方向为以人为中心的空间智能与具身智能。"
+>
+    <a class="skip-link" href="#main-content">
+        <span data-lang="en">Skip to content</span>
+        <span data-lang="zh">跳至正文</span>
+    </a>
+
+    <header class="site-header">
+        <div class="nav-shell">
+            <div class="nav-area">
+                <nav class="site-nav" aria-label="Primary navigation">
+                    <a href="index.html" data-preserve-lang data-nav-page="about">
+                        <span data-lang="en">About Me</span>
+                        <span data-lang="zh">关于我</span>
+                    </a>
+                    <a href="projects.html" data-preserve-lang data-nav-page="projects">
+                        <span data-lang="en">Projects</span>
+                        <span data-lang="zh">项目</span>
+                    </a>
+                    <a href="publications.html" data-preserve-lang data-nav-page="publications">
+                        <span data-lang="en">Publications</span>
+                        <span data-lang="zh">论文</span>
+                    </a>
+                </nav>
+                <button class="language-toggle" type="button" aria-label="切换为中文">中文</button>
+                <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="page-shell">
+        <section class="hero" aria-labelledby="profile-name">
+            <div class="portrait-wrap">
+                <img class="portrait" src="assets/profile-academic.png" alt="Portrait of Yiyu Zhuang">
+            </div>
+
+            <div>
+                <h1 id="profile-name">
+                    <span data-lang="en">Yiyu Zhuang</span>
+                    <span data-lang="zh">庄义昱</span>
+                </h1>
+                <p class="hero-role">
+                    <span data-lang="en">Assistant Researcher</span>
+                    <span data-lang="zh">特任助理研究员</span>
+                </p>
+                <p class="hero-affiliation">
+                    <span data-lang="en">Nanjing University · School of Intelligence Science and Technology</span>
+                    <span data-lang="zh">南京大学 · 智能科学与技术学院</span>
+                </p>
+                <p class="hero-statement">
+                    <span data-lang="en">Exploring human-centered spatial intelligence and embodied intelligence through 3D vision, generative models, and physiological signals.</span>
+                    <span data-lang="zh">聚焦以人为中心的空间智能与具身智能，探索三维视觉、生成模型与生理信号驱动的智能交互。</span>
+                </p>
+
+                <p class="hero-email">Email: zhuangyiyu@nju.edu.cn</p>
+                <div class="link-row" aria-label="Profile links">
+                    <a class="text-link" href="https://scholar.google.com/citations?user=Xcc9_iQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>
+                    <a class="text-link" href="https://github.com/yiyuzhuang" target="_blank" rel="noopener">GitHub ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="editorial-section" aria-labelledby="biography-title">
+            <div>
+                <h2 id="biography-title" class="section-label">
+                    <span data-lang="en">Biography</span>
+                    <span data-lang="zh">个人简介</span>
+                </h2>
+            </div>
+
+            <div class="prose">
+                <div data-lang="en">
+                    <p>I am currently an Assistant Researcher at the School of Intelligence Science and Technology, Nanjing University, and a member of the NJU-3DV Lab and the CITE Lab.</p>
+                    <p>I received my B.Eng. in Communication Engineering from Hunan University in 2020 and my Ph.D. in Information and Communication Engineering from Nanjing University in 2026, under the supervision of Prof. Xun Cao. From 2022 to 2024, I conducted research on 3D reconstruction and generation at Tencent AI Lab and the Hunyuan team.</p>
+                    <p>I have published 14 papers at CVPR, ICCV, ECCV, SIGGRAPH Asia, AAAI, and related journals. Feel free to get in touch!</p>
+                </div>
+
+                <div data-lang="zh">
+                    <p>现任南京大学智能科学与技术学院特任助理研究员，也是南京大学三维视觉实验室（NJU-3DV）和成像与智能技术实验室（CITE）成员。</p>
+                    <p>于2020年本科毕业于湖南大学通信工程专业，2026年博士毕业于南京大学信息与通信工程专业（导师：曹汛教授）。2022—2024年曾在腾讯 AI Lab 与混元大模型团队开展三维重建与生成算法研究。</p>
+                    <p>目前已在 CVPR、ICCV、ECCV、SIGGRAPH Asia、AAAI 等国际会议及期刊发表论文14篇。欢迎交流！</p>
+                </div>
+
+                <div class="profile-details" data-lang="en">
+                    <div>
+                        <h3>Industry Experience</h3>
+                        <ul class="experience-list-simple">
+                            <li><strong>2022 — 2024</strong> · Tencent AI Lab &amp; Hunyuan, research on 3D reconstruction and generation algorithms</li>
+                            <li><strong>2020</strong> · vivo Imaging Algorithm Research Team, ISP image algorithm design</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Selected Awards</h3>
+                        <ul class="experience-list-simple">
+                            <li><strong>2025</strong> · National First Prize, “Challenge Cup” National College Student Academic Science and Technology Works Competition</li>
+                            <li><strong>2025</strong> · National Silver Award, China International College Students’ Innovation Competition</li>
+                            <li><strong>2018</strong> · Outstanding Paper Award &amp; National First Prize, Contemporary Undergraduate Mathematical Contest in Modeling</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="profile-details" data-lang="zh">
+                    <div>
+                        <h3>实习经历</h3>
+                        <ul class="experience-list-simple">
+                            <li><strong>2022 — 2024</strong> · 腾讯 AI Lab 与混元大模型团队，3D重建和生成算法研究</li>
+                            <li><strong>2020</strong> · vivo 影像算法预研团队，ISP图像算法设计</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>部分获奖情况</h3>
+                        <ul class="experience-list-simple">
+                            <li><strong>2025</strong> · “挑战杯”全国大学生课外学术科技作品竞赛全国一等奖</li>
+                            <li><strong>2025</strong> · “中国国际大学生创新大赛”国赛银奖</li>
+                            <li><strong>2018</strong> · 全国大学生数学建模竞赛优秀论文奖 &amp; 全国一等奖</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="editorial-section" aria-labelledby="research-title">
+            <div>
+                <h2 id="research-title" class="section-label">
+                    <span data-lang="en">Research</span>
+                    <span data-lang="zh">研究方向</span>
+                </h2>
+            </div>
+
+            <div class="prose">
+                <div data-lang="en">
+                    <p>My research focuses on human-centered spatial intelligence and embodied intelligence, with an emphasis on 3D/4D scene modeling, 3D digital humans, and human–robot interaction.</p>
+                    <p>I aim to build intelligent systems that understand human intent and the surrounding spatial environment. By combining 3D vision and generative models, I study perceptive, predictive, and interactive world models. I also explore physiological signals, including brain–computer interfaces, to infer human action intentions and cognitive states, enabling more natural and controllable interactions with digital humans and robots.</p>
+                    <p>My long-term goal is to connect human neural intent, spatial world models, and embodied agents, making interaction with digital environments and physical robots more natural, precise, and controllable.</p>
+                </div>
+
+                <div data-lang="zh">
+                    <p>我的研究聚焦于以人为中心的空间智能与具身智能，主要研究三维/四维场景建模、三维数字人与机器人交互。</p>
+                    <p>我希望构建能够理解人类意图与外部空间环境的智能系统：利用三维视觉和生成模型建立可感知、可预测和可交互的世界模型，并结合脑机接口等生理信号理解用户的动作意图和认知状态，进一步支持数字人或机器的驱动和控制。</p>
+                    <p>我的长期研究目标是连接人类神经意图、空间世界模型与具身智能体，使人与数字世界及物理机器人之间的交互更加自然、准确和可控。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="admissions" aria-labelledby="admissions-title">
+            <div class="admissions-header">
+                <div>
+                    <p class="eyebrow">
+                        <span data-lang="en">Prospective Students</span>
+                        <span data-lang="zh">招生信息</span>
+                    </p>
+                    <h2 id="admissions-title">
+                        <span data-lang="en">Let’s explore meaningful research together.</span>
+                        <span data-lang="zh">欢迎一起探索有价值的研究问题。</span>
+                    </h2>
+                </div>
+                <p class="admissions-lead">
+                    <span data-lang="en">I welcome students interested in spatial intelligence, embodied interaction, brain–computer intelligence, and related interdisciplinary areas to get in touch.</span>
+                    <span data-lang="zh">欢迎对空间智能、具身交互、脑机智能及相关交叉方向感兴趣的同学联系交流。</span>
+                </p>
+            </div>
+
+            <div class="admissions-grid">
+                <div>
+                    <h3>
+                        <span data-lang="en">Mentoring</span>
+                        <span data-lang="zh">科研与培养方式</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">As an early-career faculty member, I remain closely engaged with research, coding, and paper writing. I aim to communicate frequently with each student and provide hands-on guidance in topic selection, implementation, experiments, and writing.</span>
+                        <span data-lang="zh">作为青年教师，我目前仍保持在科研、代码和论文一线，希望针对每位同学的基础和兴趣进行较高频率的交流，在选题、代码、实验和写作等环节提供具体指导。</span>
+                    </p>
+                    <p>
+                        <span data-lang="en">We value research quality while respecting the pace of academic growth. Curiosity, initiative, execution, responsibility, and persistence matter more than having prior publications.</span>
+                        <span data-lang="zh">我们重视研究质量，也尊重科研成长规律。相比一开始是否已有论文，我更看重好奇心、自驱力、执行力、责任感，以及面对困难时持续推进的能力。</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3>
+                        <span data-lang="en">What We Value</span>
+                        <span data-lang="zh">申请要求</span>
+                    </h3>
+                    <ul data-lang="en">
+                        <li>Interest in spatial intelligence, embodied AI, 3D vision, brain–computer interfaces, or multimodal learning.</li>
+                        <li>A foundation in Python, PyTorch, mathematics, or signal processing.</li>
+                        <li>Commitment to sustained research and proactive communication.</li>
+                        <li>Experience in computer vision, deep learning, EEG analysis, or robotics is a plus.</li>
+                    </ul>
+                    <ul data-lang="zh">
+                        <li>对空间智能、具身智能、三维视觉、脑机接口或多模态学习感兴趣；</li>
+                        <li>具备 Python、PyTorch、数学或信号处理等基础；</li>
+                        <li>愿意持续投入科研，并主动沟通研究进展；</li>
+                        <li>有计算机视觉、深度学习、脑电分析或机器人相关经验者优先。</li>
+                    </ul>
+                    <p>
+                        <span data-lang="en">Students from computer science, AI, automation, biomedical engineering, communications, and related disciplines are welcome. Learning ability, research interest, and execution matter more than a specific major.</span>
+                        <span data-lang="zh">欢迎计算机、人工智能、自动化、生物医学工程、通信工程等相关专业的同学联系。专业背景不是唯一标准，学习能力、科研兴趣和执行力更加重要。</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3>
+                        <span data-lang="en">How to Apply</span>
+                        <span data-lang="zh">申请方式</span>
+                    </h3>
+                    <p>
+                        <span data-lang="en">Please email your CV, a brief self-introduction, your research interests, and the date you can begin participating in research.</span>
+                        <span data-lang="zh">请将个人简历、简短自我介绍、感兴趣的研究方向和可以开始参与科研的时间发送至：</span>
+                    </p>
+                    <span class="email-callout">zhuangyiyu@nju.edu.cn</span>
+                    <p>
+                        <span data-lang="en">Subject: Application Type — University — Name — Research Interest</span>
+                        <span data-lang="zh">邮件标题：申请类型—学校—姓名—研究方向</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-shell">
+            <p>
+                <span data-lang="en">Last updated: July 2026</span>
+                <span data-lang="zh">最后更新于：2026年7月</span>
+            </p>
+            <div class="footer-links">
+                <a href="https://scholar.google.com/citations?user=Xcc9_iQAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+                <a href="https://github.com/yiyuzhuang" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-active-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f3ee">
+    <meta name="description" content="Publications by Yiyu Zhuang in 3D vision, digital humans, neural rendering, and embodied intelligence.">
+    <title>Yiyu Zhuang | Publications</title>
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var language = params.get("lang");
+            if (language !== "en" && language !== "zh") {
+                try { language = localStorage.getItem("site-language"); } catch (error) {}
+            }
+            if (language !== "en" && language !== "zh") {
+                language = navigator.language.toLowerCase().indexOf("zh") === 0 ? "zh" : "en";
+            }
+            document.documentElement.dataset.activeLang = language;
+            document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+        })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body
+    data-page="publications"
+    data-title-en="Yiyu Zhuang | Publications"
+    data-title-zh="庄义昱 | 论文"
+    data-description-en="Publications by Yiyu Zhuang in 3D vision, digital humans, neural rendering, and embodied intelligence."
+    data-description-zh="庄义昱在三维视觉、数字人、神经渲染与具身智能方向的论文列表。"
+>
+    <a class="skip-link" href="#main-content">
+        <span data-lang="en">Skip to content</span>
+        <span data-lang="zh">跳至正文</span>
+    </a>
+
+    <header class="site-header">
+        <div class="nav-shell">
+            <div class="nav-area">
+                <nav class="site-nav" aria-label="Primary navigation">
+                    <a href="index.html" data-preserve-lang data-nav-page="about">
+                        <span data-lang="en">About Me</span>
+                        <span data-lang="zh">关于我</span>
+                    </a>
+                    <a href="projects.html" data-preserve-lang data-nav-page="projects">
+                        <span data-lang="en">Projects</span>
+                        <span data-lang="zh">项目</span>
+                    </a>
+                    <a href="publications.html" data-preserve-lang data-nav-page="publications">
+                        <span data-lang="en">Publications</span>
+                        <span data-lang="zh">论文</span>
+                    </a>
+                </nav>
+                <button class="language-toggle" type="button" aria-label="切换为中文">中文</button>
+                <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="page-shell">
+        <header class="page-intro">
+            <p class="eyebrow">
+                <span data-lang="en">Research Record</span>
+                <span data-lang="zh">研究成果</span>
+            </p>
+            <h1>
+                <span data-lang="en">Publications</span>
+                <span data-lang="zh">论文</span>
+            </h1>
+        </header>
+
+        <section class="publication-list" aria-label="Publication list">
+            <section class="publication-year" aria-labelledby="year-2026">
+                <h2 id="year-2026">2026</h2>
+                <ol class="publication-items">
+                    <li class="publication-entry">
+                        <h3><a href="https://arxiv.org/abs/2604.02799" target="_blank" rel="noopener">UNICA: A Unified Neural Framework for Controllable 3D Avatars</a></h3>
+                        <p>Jiahe Zhu, Xinyao Wang, <span class="me">Yiyu Zhuang</span>, Yanwen Wang, Jing Tian, Yao Yao, Hao Zhu</p>
+                    </li>
+                    <li class="publication-entry">
+                        <h3><a href="https://openaccess.thecvf.com/content/CVPR2026/html/Song_CrowdGaussian_Reconstructing_High-Fidelity_3D_Gaussians_for_Human_Crowd_from_a_CVPR_2026_paper.html" target="_blank" rel="noopener">CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image</a></h3>
+                        <p>Yizheng Song, <span class="me">Yiyu Zhuang</span>, Qipeng Xu, Haixiang Wang, Jiahe Zhu, Jing Tian, Siyu Zhu, Hao Zhu</p>
+                        <p class="publication-meta">CVPR 2026</p>
+                    </li>
+                    <li class="publication-entry">
+                        <h3><a href="https://openaccess.thecvf.com/content/CVPR2026/html/Li_Pressure2Motion_Hierarchical_Human_Motion_Reconstruction_from_Ground_Pressure_with_Text_CVPR_2026_paper.html" target="_blank" rel="noopener">Pressure2Motion: Hierarchical Human Motion Reconstruction from Ground Pressure with Text Guidance</a></h3>
+                        <p>Zhengxuan Li, Qinhui Yang, <span class="me">Yiyu Zhuang</span>, Chuan Guo, Xinxin Zuo, Xiaoxiao Long, Yao Yao, Xun Cao, Qiu Shen, Hao Zhu</p>
+                        <p class="publication-meta">CVPR 2026</p>
+                    </li>
+                    <li class="publication-entry">
+                        <h3><a href="https://doi.org/10.1016/j.fmre.2025.12.031" target="_blank" rel="noopener">Towards Native Generative Model for 3D Head Avatar</a></h3>
+                        <p><span class="me">Yiyu Zhuang</span>*, Yuxiao He*, Jiawei Zhang*, Yanwen Wang, Jiahe Zhu, Yao Yao, Siyu Zhu, Xun Cao, Hao Zhu</p>
+                        <p class="publication-meta">Fundamental Research, 2026</p>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="publication-year" aria-labelledby="year-2025">
+                <h2 id="year-2025">2025</h2>
+                <ol class="publication-items">
+                    <li class="publication-entry">
+                        <h3><a href="https://arxiv.org/abs/2510.26196" target="_blank" rel="noopener">Sketch2PoseNet: Efficient and Generalized Sketch to 3D Human Pose Prediction</a></h3>
+                        <p>Li Wang, <span class="me">Yiyu Zhuang</span>, Yanwen Wang, Xun Cao, Chuan Guo, Xinxin Zuo, Hao Zhu</p>
+                        <p class="publication-meta">SIGGRAPH Asia 2025</p>
+                    </li>
+                    <li class="publication-entry">
+                        <h3><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Wang_TeRA_Rethinking_Text-guided_Realistic_3D_Avatar_Generation_ICCV_2025_paper.html" target="_blank" rel="noopener">TeRA: Rethinking Text-guided Realistic 3D Avatar Generation</a></h3>
+                        <p>Yanwen Wang*, <span class="me">Yiyu Zhuang</span>*, Jiawei Zhang, Li Wang, Yifei Zeng, Xun Cao, Xinxin Zuo, Hao Zhu</p>
+                        <p class="publication-meta">ICCV 2025</p>
+                    </li>
+                    <li class="publication-entry">
+                        <h3><a href="https://arxiv.org/abs/2405.17811" target="_blank" rel="noopener">Mani-GS: Gaussian Splatting Manipulation with Triangular Mesh</a></h3>
+                        <p>Xiangjun Gao, Xiaoyu Li, <span class="me">Yiyu Zhuang</span>, Qi Zhang, Wenbo Hu, Chaopeng Zhang, Yao Yao, Ying Shan, Long Quan</p>
+                        <p class="publication-meta">CVPR 2025</p>
+                    </li>
+                    <li class="publication-entry">
+                        <h3><a href="https://arxiv.org/abs/2412.14963" target="_blank" rel="noopener">IDOL: Instant Photorealistic 3D Human Creation from a Single Image</a></h3>
+                        <p><span class="me">Yiyu Zhuang</span>*, Jiaxi Lv*, Hao Wen*, Qing Shuai, Ailing Zeng, Hao Zhu, Shifeng Chen, Yujiu Yang, Xun Cao, Wei Liu</p>
+                        <p class="publication-meta">CVPR 2025</p>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="publication-year" aria-labelledby="year-2024">
+                <h2 id="year-2024">2024</h2>
+                <ol class="publication-items">
+                    <li class="publication-entry">
+                        <h3><a href="https://arxiv.org/abs/2408.00296" target="_blank" rel="noopener">Head360: Learning a Parametric 3D Full-Head for Free-View Synthesis in 360°</a></h3>
+                        <p>Yuxiao He, <span class="me">Yiyu Zhuang</span>, Yanwen Wang, Yao Yao, Siyu Zhu, Xiaoyu Li, Qi Zhang, Xun Cao, Hao Zhu</p>
+                        <p class="publication-meta">ECCV 2024</p>
+                    </li>
+                    <li class="publication-entry">
+                        <h3><a href="https://ojs.aaai.org/index.php/AAAI/article/view/28618" target="_blank" rel="noopener">A Pre-convolved Representation for Plug-and-Play Neural Illumination Fields</a></h3>
+                        <p><span class="me">Yiyu Zhuang</span>*, Qi Zhang*, Xuan Wang, Hao Zhu, Ying Feng, Xiaoyu Li, Ying Shan, Xun Cao</p>
+                        <p class="publication-meta">AAAI 2024</p>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="publication-year" aria-labelledby="year-2023">
+                <h2 id="year-2023">2023</h2>
+                <ol class="publication-items">
+                    <li class="publication-entry">
+                        <h3><a href="https://arxiv.org/abs/2309.10336" target="_blank" rel="noopener">Anti-Aliased Neural Implicit Surfaces with Encoding Level of Detail</a></h3>
+                        <p><span class="me">Yiyu Zhuang</span>*, Qi Zhang*, Ying Feng, Hao Zhu, Yao Yao, Xiaoyu Li, Yan-Pei Cao, Ying Shan, Xun Cao</p>
+                        <p class="publication-meta">SIGGRAPH Asia 2023</p>
+                    </li>
+                    <li class="publication-entry">
+                        <h3><a href="https://openaccess.thecvf.com/content/CVPR2023/html/Wu_High-Fidelity_3D_Face_Generation_From_Natural_Language_Descriptions_CVPR_2023_paper.html" target="_blank" rel="noopener">High-Fidelity 3D Face Generation From Natural Language Descriptions</a></h3>
+                        <p>Menghua Wu*, Hao Zhu*, Linjia Huang, <span class="me">Yiyu Zhuang</span>, Yuanxun Lu, Xun Cao</p>
+                        <p class="publication-meta">CVPR 2023</p>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="publication-year" aria-labelledby="year-2022">
+                <h2 id="year-2022">2022</h2>
+                <ol class="publication-items">
+                    <li class="publication-entry">
+                        <h3><a href="https://arxiv.org/abs/2112.02308" target="_blank" rel="noopener">MoFaNeRF: Morphable Facial Neural Radiance Field</a></h3>
+                        <p><span class="me">Yiyu Zhuang</span>*, Hao Zhu*, Xusen Sun, Xun Cao</p>
+                        <p class="publication-meta">ECCV 2022</p>
+                    </li>
+                    <li class="publication-entry">
+                        <h3><a href="https://ieeexplore.ieee.org/document/9760181" target="_blank" rel="noopener">High-Fidelity Hyperspectral Snapshot of Physical World: System Architecture, Dataset and Model</a></h3>
+                        <p>Erqi Huang, Maoqi Zhang, Zhan Ma, Linsen Chen, <span class="me">Yiyu Zhuang</span>, Xun Cao</p>
+                        <p class="publication-meta">IEEE Journal of Selected Topics in Signal Processing, 16(4), 608–621</p>
+                    </li>
+                </ol>
+            </section>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-shell">
+            <p>
+                <span data-lang="en">Last updated: July 2026</span>
+                <span data-lang="zh">最后更新于：2026年7月</span>
+            </p>
+            <div class="footer-links">
+                <a href="https://scholar.google.com/citations?user=Xcc9_iQAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+                <a href="https://github.com/yiyuzhuang" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
